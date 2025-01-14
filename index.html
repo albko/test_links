@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEPHORA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f9fc;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50; /* Smooth green shade */
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 0.9em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            position: relative;
+        }
+        main {
+            text-align: center;
+            padding: 20px;
+        }
+        h2 {
+            color: #555;
+            margin-top: 20px;
+        }
+        p {
+            color: #666;
+            margin: 20px;
+            font-size: 1.1em;
+        }
+
+        .block {
+            margin-bottom: 30px;
+        }
+
+        .block-label {
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .block-label .icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: #FFD68A;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 8px;
+            font-size: 16px;
+        }
+        
+        .custom-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff; /* Blue color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+            max-width: 300px;
+            min-width: 150px;
+            box-sizing: border-box;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .inputs {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 300px;
+            min-width: 150px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Focus effect for input */
+        .inputs:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+        }
+
+        .buttons a {
+            display: inline-block;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            flex: 1 1 calc(50% - 10px);
+            box-sizing: border-box;
+        }
+
+        .buttons a:hover {
+            background-color: #6a0dad;
+        }
+
+        @media (max-width: 768px) {
+            .buttons a {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SEPHORA</h1>
+    </header>
+
+    <main>
+        <h2>Testing Deeplinks</h2>
+                <p>
+                    All buttons are configured to trigger the app's intent filter.
+                    Just tap on any button to launch the appropriate screen of the app.
+                </p>
+        <section class="block">
+            <div class="block-label">
+                <div class="icon">!</div>
+                For Guest User
+            </div>
+            <div class="buttons">
+                <a href="aoc://signin">Sign In</a>
+                <a href="aoc://signup">Sign Up</a>
+            </div>
+        </section>
+
+        <section class="block">
+            <div class="block-label">
+                <div class="icon">!</div>
+                My Account
+            </div>
+            <div class="buttons">
+                <a href="aoc://account">Account</a>
+                <a href="aoc://account/wishlist">Wishlist</a>
+                <a href="aoc://account/purchases">Orders History</a>
+                <a href="aoc://account/settings/personalInformation">Personal Information</a>
+                <a href="aoc://account/loyaltyProgram">Loyalty Program</a>
+            </div>
+        </section>
+
+        <section class="block">
+            <div class="block-label">
+                <div class="icon">!</div>
+                Store Locator
+            </div>
+            <div class="buttons">
+                <a href="aoc://storeLocator/map">Store Locator Map</a>
+                <a href="aoc://storeLocator/list">Store Locator List</a>
+            </div>
+        </section>
+
+        <section class="block">
+            <div class="block-label">
+                <div class="icon">!</div>
+                PLP and PDP
+            </div>
+            <div class="buttons">
+                <a href="aoc://plp?id=beauty-november-view-all&name=THEBEAUTYSALE&utm_medium=pushapp&utm_campaign=beautysale271124&utm_term=beautysale">PLP Beauty Sale</a>
+                <a href="aoc://plp?id=sc-eyes&name=SephoraCollection&utm_source=batch&utm_medium=push_app&utm_campaign=scpalettes191124&utm_term=sceyes">PLP Brand Sephora Collection</a>
+                <a href="aoc://brand?id=BENEF&name=BENEFIT&brandspaceid=BENEF-brandlisting-banner-ME&utm_source=batch&utm_medium=push_app&utm_campaign=benefitfestive271124&utm_term=benefitfestive">Brand Benefit</a>
+            </div>
+        </section>
+        
+        <section class="block">
+            <div class="block-label">
+                <div class="icon">!</div>
+                Product Details Page
+            </div>
+            <div class="buttons">
+                <p>
+                Enter you SKU and tap on "Go to PDP" button. You can leave the field empty then the defauld PDP will be opened
+                </p>
+                <input class="inputs" type="text" id="skuInput" placeholder="Enter your SKU" />
+                <button id="urlButton" class="custom-button">Go to PDP</button>
+            </div>
+        </section>
+        
+        <section class="block">
+            <div class="block-label">
+                <div class="icon">!</div>
+                Tabs and Pages
+            </div>
+            <div class="buttons">
+                <a href="aoc://homepage">Homepage</a>
+                <a href="aoc://shop">Shop</a>
+                <a href="aoc://brands">Brands</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Albert Idea Inc. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+<script>
+    // Function to update the link based on the SKU value
+    document.getElementById('urlButton').addEventListener('click', function (e) {
+        e.preventDefault(); // Prevent default click behavior
+        e.stopPropagation(); // Stop event bubbling
+        // Get the SKU value from the input field
+        var skuValue = document.getElementById('skuInput').value;
+
+        // Use the entered SKU or default to 732112 if the field is empty
+        var skuToUse = skuValue.trim() === '' ? '732112' : skuValue;
+
+        // Construct the URL
+        var url = 'aoc://pdp?sku=' + encodeURIComponent(skuToUse) +
+                  '&utm_source=batch&utm_medium=push_app&utm_campaign=sdjcheriosa231124&utm_term=sdj';
+        var link = document.createElement('a');
+        link.href = url;
+        link.click();
+
+        // Show the generated URL in an alert
+        //alert("Generated URL: " + url);
+
+        // Navigate to the generated URL
+        window.location.href = url;
+    });
+</script>
